@@ -1,0 +1,38 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+}
+
+.navbar {
+  background-color: white;
+  font-size: 1.6em;
+  letter-spacing: 2px;
+}
+
+.logo a {
+  font-family: 'Share', cursive;
+  color: #06d109;
+}
+
+.bar {
+  font-family: 'Molengo', sans-serif;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+.notice {
+  margin-top: 10px;
+}
+
+.main {
+  margin-top: 30px;
+}
+
+.form {
+  margin-top: 50px;
+}

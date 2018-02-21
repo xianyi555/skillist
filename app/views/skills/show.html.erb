@@ -1,0 +1,21 @@
+<div class="container main">
+  <div class="row">
+    <h1 class="display-5"><%= link_to @skill.category.name, category_path(@skill.category.name) %></h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <%=link_to image_tag(@user.avatar.url(:original), size: "200x200", class: "profile-pic"), user_path(@user) %>
+      <h3>Name: <%= @user.first_name %></h3>
+      <h4>Current category: <%= @user.user_category %></h4>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2><%= @skill.name %></h2>
+          <p><%= @skill.descripton %></p>
+          <p><%= @skill.cost %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

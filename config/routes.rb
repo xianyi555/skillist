@@ -4,19 +4,20 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :skills, only: [:show]
   end
-  # get "/login", to: "sessions#new"
-  # get '/logout', to: "sessions#destroy"
-  # post "/sessions", to: "sessions#create"
 
-  # get "/posts", to: "posts#index", as: "posts"
-  # get "/posts/:id", to: "posts#show", as: "post"
-  # get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
-  # patch "/posts/:id", to: "posts#update"
-  # delete "/posts/:id", to: "posts#destroy"
+  get "/login", to: "sessions#new"
+  get '/logout', to: "sessions#destroy"
+  post "/sessions", to: "sessions#create"
 
-  # get "/cities/:name/posts/new", to: "posts#new", as: "new_post"
-  # post "/cities/:name/posts", to: "posts#create", as: "cities_posts"
+  get "/skills", to: "skills#index", as: "skills"
+  get "/skills/:id", to: "skills#show", as: "skill"
+  get "/skills/:id/edit", to: "skills#edit", as: "edit_skill"
+  patch "/skills/:id", to: "skills#update"
+  delete "/skills/:id", to: "skills#destroy"
 
-  # get "/cities", to: "cities#index"
-  # get "/cities/:name", to: "cities#show", as: "city"
+  get "/categories/:name/skills/new", to: "skills#new", as: "new_skill"
+  post "/categories/:name/skills", to: "skills#create", as: "categories_skills"
+
+  get "/categories", to: "categories#index"
+  get "/categories/:name", to: "categories#show", as: "category"
 end

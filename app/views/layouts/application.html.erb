@@ -4,11 +4,41 @@
     <title>Skillist</title>
     <%= csrf_meta_tags %>
 
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Share:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Molengo|Share:700" rel="stylesheet">
   </head>
 
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="logo"><%= link_to "Skillist", root_path %></div>
+        <% if current_user %>
+          <div>
+            <%= link_to "Profile", user_path(current_user.id), class: "bar btn btn-outline-dark" %>
+            <%= link_to "Log Out", logout_path, class: "bar btn btn-outline-dark" %>
+          </div>
+        <% else %>
+          <div>
+            <%= link_to "Sign Up", new_user_path, class: "bar btn btn-outline-dark" %>
+            <%= link_to "Log In", login_path, class: "bar btn btn-outline-dark" %>
+          </div>
+        <% end %>
+          </div>
+    </nav>
+    <% flash.each do |name, msg| %>
+      <div id="flash-message" class="<%= name %>">
+        <div class="container">
+          <p>
+            <%= name.capitalize %>: <%= msg %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
