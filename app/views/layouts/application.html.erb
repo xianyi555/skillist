@@ -15,18 +15,18 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
-
-          <% if current_user %>
+          <div class= "logo" ><%= link_to "Skillist", root_path%></div>
+          
             <div>
               <%= link_to "Profile", user_path(current_user.id), class: "bar_link" %>
               <%= link_to "Log Out", logout_path, class: "bar_link" %>
             </div>
-          <% else %>
+         
             <div>
               <%= link_to "Sign Up", new_user_path, class: "bar_link" %>
               <%= link_to "Log In", login_path, class: "bar_link" %>
             </div>
-          <% end %>
+         
       </div>
     </nav>
 
