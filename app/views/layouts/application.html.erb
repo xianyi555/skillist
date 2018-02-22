@@ -13,7 +13,22 @@
   </head>
 
   <body>
-
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <div class= "logo" ><%= link_to "Skillist", root_path%></div>
+          <% if current_user %>
+            <div>
+              <%= link_to "Profile", user_path(current_user.id)s %>
+              <%= link_to "Log Out", logout_paths %>
+            </div>
+          <% else %>
+            <div>
+              <%= link_to "Sign Up", new_user_paths %>
+              <%= link_to "Log In", login_paths %>
+            </div>
+          <% end %>
+      </div>
+    </nav>
 
     <nav class="category_bar" role="navigation">
       <div class="categories">
