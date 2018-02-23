@@ -1,3 +1,26 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text_bar {
+  margin-top: 20px;
+}
+
+.add_new_skill_button {
+  color: #3f3f3f;
+}
+
+.new_category_input {
+  border-color: #43ef54;
+}
+
+.new_category_input_btn {
+  float: right;
+  background-color: #43ef54;
+}
+
+.new_category_input_btn:hover {
+  background-color: white;
+  border-color: white;
+  color: #43ef54;
+}

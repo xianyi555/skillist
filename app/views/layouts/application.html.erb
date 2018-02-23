@@ -10,6 +10,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Share:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Molengo|Share:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Libre+Franklin" rel="stylesheet">
   </head>
 
   <body>
@@ -32,13 +33,13 @@
 
     <nav class="category_bar" role="navigation">
       <div class="categories">
-          <div class="category"><%= link_to "Housekeeking", class: "category_link"  %></div>
-          <div class="category"><%= link_to "Cooking", class: "category_link" %></div>
-          <div class="category"><%= link_to "Massage", class: "category_link" %></div>
-          <div class="category"><%= link_to "Haircut", class: "category_link" %></div>
-          <div class="category"><%= link_to "Moving", class: "category_link" %></div>
-          <div class="category"><%= link_to "Paiting", class: "category_link" %></div>
-          <div class="category"><%= link_to "All Categories", class: "category_link" %></div>
+          <div class="category"><%= link_to "Housekeeping", "/categories/housekeeping", class: "category_link" %></div>
+          <div class="category"><%= link_to "Cooking", "/categories/cooking", class: "category_link" %></div>
+          <div class="category"><%= link_to "Massage", "/categories/massage", class: "category_link" %></div>
+          <div class="category"><%= link_to "Haircut", "/categories/haircut", class: "category_link" %></div>
+          <div class="category"><%= link_to "Moving", "/categories/moving", class: "category_link" %></div>
+          <div class="category"><%= link_to "Painting", "/categories/painting", class: "category_link" %></div>
+          <div class="category"><%= link_to "All Categories", "/categories", class: "category_link" %></div>
       </div>
     </nav>
 

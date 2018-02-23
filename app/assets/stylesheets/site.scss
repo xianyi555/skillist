@@ -132,6 +132,29 @@ animation-duration: 20s;
   animation-delay: 0;
 }
 
+.homepage_title {
+  display: inline-block;
+  margin: 200px 0 0 550px;
+}
+
+.to_earn {
+  color: #06d109;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 0 0 220px;
+  font-family: 'Libre Franklin', sans-serif;  
+}
+
+.get_to_earn :hover {
+  text-decoration: none; 
+  color: white; 
+}
+
+.title_to_earn {
+  color: white;
+  display: inline-block;
+  font-size: 35px;
+}
 
 
 

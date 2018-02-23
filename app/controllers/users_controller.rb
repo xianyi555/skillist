@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :require_login, only: [:edit, :update, :destroy]
-  before_action :check_auth, only: [:edit, :update, :destroy]
+  # before_action :check_auth, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   def check_auth
     @user = User.find_by_id(params[:id])
-    if current_user != @user
+    if current_user != @users
       flash[:notice] = "No hacking!"
       redirect_to login_path
     end

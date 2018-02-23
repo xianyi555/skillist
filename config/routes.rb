@@ -18,6 +18,15 @@ Rails.application.routes.draw do
   get "/categories/:name/skills/new", to: "skills#new", as: "new_skill"
   post "/categories/:name/skills", to: "skills#create", as: "categories_skills"
 
+  get "/categories/new", to: "categories#new", as: "new_category"
+  post "/categories", to: "categories#create"
+
   get "/categories", to: "categories#index"
   get "/categories/:name", to: "categories#show", as: "category"
+
+
+
+
+
+
 end

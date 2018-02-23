@@ -14,15 +14,39 @@
       <hr>
       <% if current_user && current_user.id == @user.id %>
         <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-dark" %>
-        <%= link_to "Delete profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+        <%= link_to "Delete profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "show_botton btn btn-outline-danger" %>
       <% end %>
     </div>
 
-    <div class="col-sm-8">
+    <div class="col-md-4 offset-md-4">
+      <select class="form-control form-control-lg">
+        <option value="add_category">Add Your Category</option>
+        <option value="housekeeping">Housekeeping</option>
+        <option value="cooking">Cooking</option>
+        <option value="massage">Massage</option>
+        <option value="haircut">Haircut</option>
+        <option value="moving">Moving</option>
+        <option value="painting">Painting</option>
+      </select>
+      <span class="add_new_skill_button btn btn-outline-dark add-skill float-right", onclick="addSkill()"> Add New Skill </span>
+      <script>
+        function addSkill() {
+          var t = document.querySelector("select").value;
+          if (t == "add_category") {
+            window.location = `/categories/new`;
+          }else{
+          window.location = `/categories/${t}/skills/new`;
+          }
+        }
+      </script>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 offset-md-2">
       <% @user.skills.each do |skill| %>
         <div class="row review">
           <div class="col-sm-11">
-            <h3><%= skill.category.name %> - <%= link_to skill.name, skill_path(skill) %></h3>
+            <h3><%= skill.category.proper_name %> - <%= link_to skill.name, skill_path(skill) %></h3>
             <p><%= skill.description %></p>
           </div>
           <div class="col-sm-1 float-right">
