@@ -1,15 +1,8 @@
 <div class="container">
   <div class="text_bar row">
-    <% if @category.proper_name %>
     <div class="col-md-5">
-      <h1 class="display-5"><%= @category.proper_name %></h1>
+      <h1 class="display-5"><%= @category.name.capitalize %></h1>
     </div>
-    <% else %> 
-    <div class="col-md-5">
-      <h1 class="display-5"><%= @category.name %></h1>
-    </div>
-    <% end %>
-
     <div class="col-md-5">
       <p class="display-5"><%= @category.description %></p>
     </div>
@@ -32,8 +25,7 @@
       </div>
       <div class="col-md-10">
         <h2><%= link_to skill.name, skill_path(skill) %></h2>
-        <p><%= skill.description %></p>
-        <p>$: <% skill.cost %></p>
+        <p><%= skill.cost %></p>
       </div>
     <% end %>
   </div>

@@ -57,3 +57,24 @@
   </small>
   </div>
 </section>
+
+<div class="container">
+  <div class="row">
+
+    <div class="categories_listing col-md-3">
+      <p class="category_list_title">Categories Lists</p>
+      <% @categories.each do |category| %>
+        <ul>
+          <li class="categories_list"><%= link_to "#{category.name.capitalize}", category_path(category.name) %></li>
+        </ul>
+      <% end %> 
+    </div>
+
+    <div class="col-md-9 user_link">
+      <% @users.each do |user| %>
+        <%= link_to image_tag(user.avatar.url(:original), size: "200x200", class: "profile-pic"), user_path(user) %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

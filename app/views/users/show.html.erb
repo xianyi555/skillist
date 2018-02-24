@@ -45,10 +45,10 @@
     <div class="col-sm-10 offset-md-2">
       <% @user.skills.each do |skill| %>
         <div class="row review">
-          <div class="col-sm-11">
-            <h3><%= skill.category.proper_name %> - <%= link_to skill.name, skill_path(skill) %></h3>
-            <p><%= skill.description %></p>
-          </div>
+            <div class="col-sm-11">
+              <h3><%= skill.category.name.capitalize %> - <%= link_to skill.name, skill_path(skill) %></h3>
+              <p><%= skill.cost %></p>
+            </div>
           <div class="col-sm-1 float-right">
             <% if current_user && current_user.id == @user.id %>
               <%= link_to edit_skill_path(skill) do %><%= fa_icon "edit" %><% end %>

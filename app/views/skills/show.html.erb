@@ -1,6 +1,6 @@
 <div class="container main">
   <div class="row">
-    <h1 class="display-5"><%= link_to @skill.category.proper_name, category_path(@skill.category.name) %></h1>
+    <h1 class="display-5"><%= link_to @skill.category.name.capitalize, category_path(@skill.category.name) %></h1>
   </div>
   <div class="row">
     <div class="col-sm-4">
@@ -11,7 +11,7 @@
     <div class="col-sm-8">
       <div class="row">
         <div class="col-sm-12">
-          <h2><%= @skill.name %></h2>
+          <h2><%= @skill.name.capitalize %></h2>
           <p><%= @skill.description %></p>
           <p><%= @skill.cost %></p>
         </div>
