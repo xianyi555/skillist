@@ -63,11 +63,13 @@
 
     <div class="categories_listing col-md-3">
       <p class="category_list_title">Categories Lists</p>
+      <div class="all_lists">
       <% @categories.each do |category| %>
         <ul>
           <li class="categories_list"><%= link_to "#{category.name.capitalize}", category_path(category.name) %></li>
         </ul>
       <% end %> 
+      </div>
     </div>
 
     <div class="col-md-9 user_link">
