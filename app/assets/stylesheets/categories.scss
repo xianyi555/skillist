@@ -32,5 +32,36 @@
 }
 
 .add_type_skill {
+  background-color: #06d109;
   color: #474746;
+}
+
+.add_type_skill:hover {
+  background-color: #06d109;
+  color: white;
+}
+
+.category_link_inbox {
+  color: white;
+  margin: 20px;
+}
+
+.category_link_inbox:hover {
+  text-decoration: none;
+  color: #06d109;
+}
+
+.skill_title {
+  margin-bottom: 40px;
+}
+
+.category_new {
+  background-color: #858784;
+  padding: 80px 20px;
+}
+
+.categories_all {
+  background-color: #858784;
+  margin: 30px 0 0 90px;
+  padding: 30px;
 }

@@ -24,9 +24,9 @@
         <ul>
           <li>
             <div class="message_show">
-                <% if m.receiver_show == current_user.firstname %>
+                <% if current_user != nil &&m.receiver_show == current_user.firstname %>
                   <%= m.content%>
-                  --from "<strong><%= m.sender_name %></strong>"
+                  --from <strong><%= link_to m.sender_name, user_path(m.user_id) %></strong>
                 <% end %>
             </div>
           </li>

@@ -38,17 +38,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  def notshowsendmessage
-    @message = Message.find_by_id(params[:id])
-    @message.update_attributes(:sender_show => nil)
-    redirect_back(fallback_location: root_path)
-  end
-
-  def notshowreceivemessage
-    @message = Message.find_by_id(params[:id])
-    @message.update_attributes(:receiver_show => nil)
-    redirect_back(fallback_location: root_path)
-  end
 
   def destroy
     @user = User.find_by_id(session[:user_id])
