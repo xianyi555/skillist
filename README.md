@@ -1,24 +1,29 @@
-# README
+# SKILLIST
+Welcome to Vagabond! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### In the app, you are able to:
+- Look for skills providers who you need
+- Create your own profile 
+- Create your skills
+- Create a category if you could not find one fit you
+- Write a message to your target service provider that you could keep in touch by messaging for making an appointment
+- Edit you profile
+- Edit and delete any skills that you have written
+- Delete you profile (we'll be sad to see you go, though!)
 
-Things you may want to cover:
 
-* Ruby version
+## Built with
+- Bootstrap 4.0
+- Ruby 
+- Rails 5.1.4
+- PostgresQL 
+- Paperclip/AWS
+- JQuery
 
-* System dependencies
 
-* Configuration
+### ERD and FRAMWORK
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<p align="center">
+  <img src="./app/assets/ERD.jpg" width="350"/>
+  <img src="./app/assets/Framework.jpg" width="350"/>
+</p>
