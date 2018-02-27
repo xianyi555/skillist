@@ -54,5 +54,17 @@
     <% end %>
 
     <%= yield %>
+    <footer>
+      <div class="container text-center">
+        <a>
+          <p>© 2018 SKILLIST. All Rights Reserved.</p>
+        </a>
+        <ul class=list_item_footer>
+          <li class="list-inline-item"><%= link_to "Privacy", class: "footer_list" %></li>
+          <li class="list-inline-item"><%= link_to "Terms", class: "footer_list"  %></li>
+          <li class="list-inline-item"><%= link_to "FAQ", class: "footer_list" %></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
