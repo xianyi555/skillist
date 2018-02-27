@@ -1,5 +1,5 @@
 # SKILLIST
-Welcome to Vagabond! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
+Welcome to Skillist! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
 
 ### In the app, you are able to:
 - Look for skills providers who you need
