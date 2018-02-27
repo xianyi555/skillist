@@ -18,9 +18,30 @@
       <% end %>
     </div>
 
-    <div class="col-md-4 offset-md-4">
+    <div class="message_box col-sm-4">
+      <strong>Your messages: </strong>
+      <% @messages.each do |m|%>
+        <ul>
+          <li>
+            <div class="message_show">
+                <% if m.receiver_show == current_user.firstname %>
+                  <%= m.content%>
+                  --from "<strong><%= m.sender_name %></strong>"
+                <% end %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
+      <div class="message_botton">
+      <button type="button" class="message_send_button btn btn-primary" data-toggle="modal" data-target="#myModalMessage" data-whatever="@mdo">Send Message</button>
+      <%= link_to "clear all messages", messages_path, method: :delete, data: {
+        confirm: "Are you sure, you wanna delete all messages?" }, class: "message_deleted_button btn btn-outline-danger" %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
       <select class="form-control form-control-lg">
-        <option value="add_category">Add Your Category</option>
+        <option value="add_category">Add a new type of skill</option>
         <option value="housekeeping">Housekeeping</option>
         <option value="cooking">Cooking</option>
         <option value="massage">Massage</option>
@@ -41,7 +62,9 @@
       </script>
     </div>
   </div>
-  <div class="row">
+
+
+  <div class="row show_all_skills">
     <div class="col-sm-10 offset-md-2">
       <% @user.skills.each do |skill| %>
         <div class="row review">
@@ -61,3 +84,46 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- Modal for message -->
+  <div class="modal fade" id="myModalMessage" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <!-- Modal Header -->
+        <div class="modal-header">
+            <button type="button" class="close"
+               data-dismiss="modal">
+                   <span aria-hidden="true">&times;</span>
+                   <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">
+                Message
+            </h4>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+            <%= form_for @message do |f| %>
+            <p>Sent to:</p>
+            <div>
+              <%= f.text_field :receiver_name, placeholder: "receiver", :value => "#{@user.firstname}" %>
+            </div>
+            <div>
+              <%= f.text_area :content, placeholder: "Content", style: "width:80%; height:20vh; margin-top:2%" %>
+            </div>
+            <%= f.submit "Sent", :class => "btn btn-default", style: "margin-top:2%"%>
+            <%end%>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">
+                        Close
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>

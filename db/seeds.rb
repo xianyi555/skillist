@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Skill.destroy_all
-Category.destroy_all
+# User.destroy_all
+# Skill.destroy_all
+# Category.destroy_all
 
 category_names = ["Housekeeping", "Cooking", "Massage", "Haircut", "Moving", "Painting"]
 categories_data = []
@@ -28,8 +28,8 @@ skills_data = []
     name: "Skills review",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc nisl, lacinia sit amet fringilla ac, posuere quis dui. Sed vel fermentum orci. Aenean a turpis quam. Ut turpis magna, lobortis a purus in, cursus tempus elit. Sed dignissim laoreet sagittis. Quisque nec ornare neque. Sed sed metus sollicitudin elit congue placerat et vel enim. In vitae arcu a purus hendrerit condimentu",
     cost: 88,
-    category_id: 55,
-    user_id: 16
+    category_id: 93,
+    user_id: 18,
   }
 end
 Skill.create(skills_data)

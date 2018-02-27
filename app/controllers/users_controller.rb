@@ -29,6 +29,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @message = Message.new
+    @messages = Message.all
   end
 
   def edit

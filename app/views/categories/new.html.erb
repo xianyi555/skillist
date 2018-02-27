@@ -4,7 +4,7 @@
   </div>
   <div class="row justify-content-md-center form">
     <div class="col-sm-5">
-      <h2>Create a new category</h2>
+      <h2>Create a new type of skill</h2>
     </div>
   </div>
 
@@ -12,7 +12,7 @@
     <div class="col-md-6">
       <%= form_for @category, url: categories_path do |f| %>
         <div class="form-group">
-          <%= f.text_field :name, placeholder: "Category Name", class:"new_category_input form-control" %>
+          <%= f.text_field :name, placeholder: "Type of Skill", class:"new_category_input form-control" %>
         </div>
         <div class="form-group">
           <%= f.text_area :description, placeholder: "Description", class:"new_category_input form-control" %>

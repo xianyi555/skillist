@@ -24,6 +24,12 @@ Rails.application.routes.draw do
   get "/categories", to: "categories#index"
   get "/categories/:name", to: "categories#show", as: "category"
 
+  # get '/messages', to: 'message#index'
+  post '/messages', to: 'messages#create'
+  patch '/users/:id/messages/destroy/send/:id', to: 'messages#notshowsendmessage', as: 'message_notshow_send'
+  patch '/users/:id/messages/destroy/receive/:id', to: 'messages#notshowreceivemessage', as: 'message_notshow_receive'
+  delete "/messages", to: "messages#destroy"
+
 
 
 
