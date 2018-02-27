@@ -24,4 +24,4 @@ Welcome to Vagabond! This is an app for the workers who wants to post their own 
 ### ERD and FRAMWORK
 
 ![ERD](./app/assets/images/ERD.jpg)
-![Framwork](./app/assets/images/Framwork.jpg)
+![Framework](./app/assets/images/Framework.jpg)
