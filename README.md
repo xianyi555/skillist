@@ -1,4 +1,7 @@
 # SKILLIST
+
+## Link to Heroku: https://skillist.herokuapp.com/
+
 Welcome to Skillist! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
 
 ### In the app, you are able to:
@@ -21,7 +24,24 @@ Welcome to Skillist! This is an app for the workers who wants to post their own 
 - JQuery
 
 
+## Installation and setup steps:
+- Set Routes for User and Skill
+- Set up Login feature
+- CRUD for User and Skill
+- Category Set up
+- Styling the homepage and other show page
+- Add Message model
+
+## User Stories: https://trello.com/b/72pcKo9P/skillist
+
+
 ### ERD and FRAMWORK
 
 ![ERD](./app/assets/images/ERD.jpg)
 ![Framework](./app/assets/images/Framework.jpg)
+
+### List of unsolved problems or future features
+- Action Cable to enable users to chat
+- OAuth by third party login
+- ActionMailer
+- payment feature to enable users make a transaction online
