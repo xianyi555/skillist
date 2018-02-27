@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# Skill.destroy_all
-# Category.destroy_all
+User.destroy_all
+Skill.destroy_all
+Category.destroy_all
 
 category_names = ["Housekeeping", "Cooking", "Massage", "Haircut", "Moving", "Painting"]
 categories_data = []
@@ -17,7 +17,7 @@ category_names.each do |category|
     name: category.downcase.gsub(" ", "-"),
     proper_name: category,
     image: "#{category.downcase.delete(' ')}_category.png",
-    description: "Lovely category"
+    description: "This category is about blah blah. Working professinals here are for who you want to look for the service! Hope you enjoy this category service and make a skill of you for others!"
   }
 end   
 categories = Category.create(categories_data)
