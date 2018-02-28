@@ -18,49 +18,56 @@
       <% end %>
     </div>
 
-    <div class="message_box col-sm-4">
-      <strong>Your messages: </strong>
-      <% @messages.each do |m|%>
-        <ul>
-          <li>
-            <div class="message_show">
-                <% if current_user != nil &&m.receiver_show == current_user.firstname %>
-                  <%= m.content%>
-                  --from <strong><%= link_to m.sender_name, user_path(m.user_id) %></strong>
-                <% end %>
-            </div>
-          </li>
-        </ul>
-      <% end %>
-      <div class="message_botton">
-      <button type="button" class="message_send_button btn btn-primary" data-toggle="modal" data-target="#myModalMessage" data-whatever="@mdo">Send Message</button>
-      <%= link_to "clear all messages", messages_path, method: :delete, data: {
-        confirm: "Are you sure, you wanna delete all messages?" }, class: "message_deleted_button btn btn-outline-danger" %>
+    <% if current_user && current_user.id == @user.id %>
+      <div class="message_box col-sm-4">
+        <strong>Your messages: </strong>  
+        <% @messages.each do |m|%>
+              <div class="message_show">
+                  <% if current_user != nil &&m.receiver_show == current_user.firstname %>
+                    <%= m.content%>
+                    --from <strong><%= link_to m.sender_name, user_path(m.user_id) %></strong>
+                  <% end %>
+              </div>
+        <% end %>
+        <div class="message_botton">
+        <button type="button" class="message_send_button btn btn-primary" data-toggle="modal" data-target="#myModalMessage" data-whatever="@mdo">Send Message</button>
+        <%= link_to "clear all messages", messages_path, method: :delete, data: {
+          confirm: "Are you sure, you wanna delete all messages?" }, class: "message_deleted_button btn btn-outline-danger" %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <div>
+      <%= link_to "send message", new_user_path, class: "btn btn-primary" %>
+      </div>
+      <p class="message_hint">Click here to sign up and send immediate message to him(her)!</p> 
+    <% end %>
 
-    <div class="col-md-4">
-      <select class="form-control form-control-lg">
-        <option value="add_category">Add a new type of skill</option>
-        <option value="housekeeping">Housekeeping</option>
-        <option value="cooking">Cooking</option>
-        <option value="massage">Massage</option>
-        <option value="haircut">Haircut</option>
-        <option value="moving">Moving</option>
-        <option value="painting">Painting</option>
-      </select>
-      <span class="add_new_skill_button btn btn-outline-dark add-skill float-right", onclick="addSkill()"> Add New Skill </span>
-      <script>
-        function addSkill() {
-          var t = document.querySelector("select").value;
-          if (t == "add_category") {
-            window.location = `/categories/new`;
-          }else{
-          window.location = `/categories/${t}/skills/new`;
+
+
+    <% if current_user && current_user.id == @user.id %>
+      <div class="col-md-4">
+        <select class="form-control form-control-lg">
+          <option value="add_category">Add a new type of skill</option>
+          <option value="housekeeping">Housekeeping</option>
+          <option value="cooking">Cooking</option>
+          <option value="massage">Massage</option>
+          <option value="haircut">Haircut</option>
+          <option value="moving">Moving</option>
+          <option value="painting">Painting</option>
+        </select>
+        <span class="add_new_skill_button btn btn-outline-dark add-skill float-right", onclick="addSkill()"> Add New Skill </span>
+        <script>
+          function addSkill() {
+            var t = document.querySelector("select").value;
+            if (t == "add_category") {
+              window.location = `/categories/new`;
+            }else{
+            window.location = `/categories/${t}/skills/new`;
+            }
           }
-        }
-      </script>
-    </div>
+        </script>
+      </div>
+    <% end %>
   </div>
 
 
@@ -106,14 +113,14 @@
         <!-- Modal Body -->
         <div class="modal-body">
             <%= form_for @message do |f| %>
-            <p>Sent to:</p>
+            <p>Send to:</p>
             <div>
               <%= f.text_field :receiver_name, placeholder: "receiver", :value => "#{@user.firstname}" %>
             </div>
             <div>
               <%= f.text_area :content, placeholder: "Content", style: "width:80%; height:20vh; margin-top:2%" %>
             </div>
-            <%= f.submit "Sent", :class => "btn btn-default", style: "margin-top:2%"%>
+            <%= f.submit "Send", :class => "btn btn-default", style: "margin-top:2%"%>
             <%end%>
         </div>
 

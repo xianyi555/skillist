@@ -3,7 +3,11 @@
     <h1 class="skill_title display-5">Select the Type of Skill</h2>
   </div>
 
-  <%= link_to "Add a New Type of Skll", "/categories/new", class: "btn btn-primary float-right add_type_skill" %>
+  <% if current_user && current_user.id == @user.id %>
+  <%= link_to "Add a New Type of Skill", "/categories/new", class: "btn btn-primary float-right add_type_skill" %>
+  <% else %>
+  <%= link_to "Sign up now and Add a Skill", new_user_path, class: "btn btn-primary float-right add_type_skill" %>
+  <% end %>
 
   <div class="row justify-content-md-center">
     <% @categories.each do |category| %>
