@@ -12,7 +12,7 @@
   <div class="row justify-content-md-center">
     <% @categories.each do |category| %>
       <div class="col-md-2  text-center">
-        <h3><%= link_to category.name.capitalize, category_path(category.name), class: "category_link_inbox" %></h3>
+        <h3><%= link_to category.name.capitalize, category_path(category.name, category), class: "category_link_inbox" %></h3>
       </div>
     <% end %>
   </div>

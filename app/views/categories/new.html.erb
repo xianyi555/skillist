@@ -10,14 +10,14 @@
 
   <div class="row justify-content-md-center">
     <div class="col-md-6">
-      <%= form_for @category, url: categories_path do |f| %>
+      <%= form_for @category, url: categories_path, method: "post" do |f| %>
         <div class="form-group">
           <%= f.text_field :name, placeholder: "Type of Skill", class:"new_category_input form-control" %>
         </div>
         <div class="form-group">
           <%= f.text_area :description, placeholder: "Description", class:"new_category_input form-control" %>
         </div>
-        <%= f.submit "Save Category", class:"new_category_input_btn btn-primary" %>
+        <%= f.submit "Save Category", class:"btn btn-primary" %>
       <% end %>
     </div>
   </div>
