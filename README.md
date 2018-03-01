@@ -2,6 +2,10 @@
 
 ## Link to Heroku: https://skillist.herokuapp.com/
 
+![Homepage](./app/assets/images/homepage.png)
+![category_showpage](./app/assets/images/category_showpage.png)
+![user_profilepage](./app/assets/images/user_profilepage.png)
+
 Welcome to Skillist! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
 
 ### In the app, you are able to:
@@ -25,12 +29,12 @@ Welcome to Skillist! This is an app for the workers who wants to post their own 
 
 
 ## Installation and setup steps:
-- Set Routes for User and Skill
-- Set up Login feature
-- CRUD for User and Skill
-- Category Set up
-- Styling the homepage and other show page
-- Add Message model
+- Install "postgres"
+- Bundle install by run "bundle install" in your terminal
+- Sarting rails server by run "rails server" in your terminal
+- create database by run "rails db:create" in your terminal
+- migrate data by run "rails db:migrate" in your terminal
+- seed data by run "rails db:seed" in your terminal
 
 ## User Stories: https://trello.com/b/72pcKo9P/skillist
 
