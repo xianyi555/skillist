@@ -3,8 +3,11 @@
 ## Link to Heroku: https://skillist.herokuapp.com/
 
 ![Homepage](./app/assets/images/homepage.png)
+### Homepage 
 ![category_showpage](./app/assets/images/category_showpage.png)
+### Category Showpage
 ![user_profilepage](./app/assets/images/user_profilepage.png)
+### User profilepage
 
 Welcome to Skillist! This is an app for the workers who wants to post their own skills and other users could find who has the skills they would like to pay by hourly.
 
