@@ -26,6 +26,19 @@ body {
   font-size: 16px;
 }
 
+@media screen and (max-width: 1375px) {
+  .category {
+    margin: 8px 45px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .category {
+    margin: 8px 35px;
+  }
+}
+
+
 .category a {
   color: #444440;
 }
